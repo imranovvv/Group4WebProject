@@ -4,24 +4,33 @@
 <body>
 <?php
 	$con=mysqli_connect("localhost", "root", "","login_db") or die("Cannot connect to server");
-	$username=@$_POST["username"]; 
-	$password=@$_POST["password"];
-	$sql="SELECT * FROM admin_table WHERE adminUsername='$username'"; $result=mysqli_query($con,$sql);
-	$rowcount=mysqli_num_rows($result);
-	echo "$rowcount";
-	if(mysqli_num_rows($result)== 1)
+	
+	$username=$_POST["username"]; 
+	$password=$_POST["password"];
+	$sql="SELECT * FROM login WHERE username='".$username."'"; 
+	$result=mysqli_query($con,$sql);
+	$row=mysqli_fetch_array($result);
+	if(mysqli_num_rows($result)== 0)
 		echo "Username does not exist";
 	else
 	{
-		$row=mysqli_fetch_array($result,MYSQL_BOTH);
-		if($row["adminPassword"]==$password)
+		if($row["password"]==$password)
 		{
-			session_start();
-			$_SESSION["userid"]=$username;
-			header("Location:admin.html");
+			if($row["usertype"]=="admin")
+			{
+				session_start();
+				$_SESSION["userid"]=$username;
+				header("location:admin.html");
+			}
+			else
+			{
+				session_start();
+				$_SESSION["userid"]=$username;
+				header("location:user.html");
+			}	
 		}
 
-		else "Password wrong";
+		else echo "Password wrong";
 	}
 ?>
 </body>
