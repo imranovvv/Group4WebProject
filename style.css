@@ -36,4 +36,10 @@ body{
 .login form input[type="submit"]{
 	form-size:20px;
 	margin-top: 15px;
+	margin-bottom: 12px;
+}
+
+a {
+	font-size: 15px;
+	text-align: right;
 }
