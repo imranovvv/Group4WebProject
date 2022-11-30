@@ -11,8 +11,9 @@
 	$password=$_POST["password"];
 
 	$sql="INSERT INTO login (name, email, username, password) VALUES(?,?,?,?)";
-	$insert=$con->prepare($sql);
-	$result=$insert->execute([$name,$email,$username,$password]);
+	$stmtinsert=$con->prepare($sql);
+	$stmtinsert->bind_param('ssss',$name,$email,$username,$password);
+	$result=$stmtinsert->execute();
 
 	if($result){
 		echo 'Successfully saved';
