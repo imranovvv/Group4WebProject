@@ -23,6 +23,8 @@
 			{
 				session_start();
 				$_SESSION["usertype"]=$row["usertype"];
+				$_SESSION["userid"]=$row["username"];
+
 				header("location:user.php");
 			}	
 		}
