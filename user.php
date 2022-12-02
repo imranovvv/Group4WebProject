@@ -18,8 +18,7 @@
 	else
 	{
 		echo "No session exist or session is expired. Please log in again";
-		header("Location: index.html");
-		exit();
+		
 	}
 
 ?>
