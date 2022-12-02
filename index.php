@@ -13,7 +13,7 @@
 
 <body>
 
-	<a href="login.php">Login</a>
+	<a href="login.html">Login</a>
 
 	<table border=1 align=center>
 		<tr>
