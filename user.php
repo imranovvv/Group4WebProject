@@ -27,7 +27,8 @@
   <div class="card-body">
     <h5 class="card-title"><?php echo $row[1], $row[0]?></h5>
     <p class="card-text"><?php echo $row[2]?></p>
-    <a href="registercourse.php?id="$row[0] class="btn btn-primary">Register</a>
+
+		<a href="registercourse.php?id=<?php echo $row[0]?>" class="btn btn-primary">Register</a>	
 
   </div>
 </div>

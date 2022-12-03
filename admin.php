@@ -4,16 +4,16 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
+	
 </head>
 <body>
-<h1>ADMIN PAGE</h1>
 <?php
 	session_start();
 	
 	if ($_SESSION['usertype']=="admin") 
 	{
 ?>
-		<table border=1 align=center>
+		<table border=1 align=center class="table table-bordered">
 			<tr>
 				<th colspan="6">COURSES</th>
 			</tr>
@@ -45,6 +45,12 @@
 
 ?>
 	</tr>
+	</table>
+	<table align=center>
+		<tr><td align="center">
+			<a href="">Add data</a><br>
+			<a href="">Delete user</a><br>
+			<a href="">Set quota</a><br>
 	</table>
 <?php
 	}

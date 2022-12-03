@@ -7,7 +7,6 @@
 
 	$con=mysqli_connect("localhost", "root", "","login_db") or die("Cannot connect to server");
 	$courseid=@$_GET['id'];
-	echo $courseid;
 	$sql="INSERT INTO registercourse VALUES('{$_SESSION['userid']}','$courseid')";
 	$result=mysqli_query($con,$sql);
 	if($result){
