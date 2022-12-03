@@ -6,10 +6,10 @@
 <body>
 <h1>Here Are The Categories of Programming Languages</h1>
 <p><strong>Click the name to know about it</strong></p>
-<p><a href= "http://localhost/katir/Group4WebProject/paitan.php">Pyton</p>
-<p><a href= "http://localhost/katir/Group4WebProject/cplus.php">C++</p>
-<p><a href= "http://localhost/katir/Group4WebProject/java.php">Java</p>
-<p><a href= "http://localhost/katir/Group4WebProject/PHP.php">PHP</p>
+<p><a href= "paitan.php">Pyton</p>
+<p><a href= "cplus.php">C++</p>
+<p><a href= "java.php">Java</p>
+<p><a href= "PHP.php">PHP</p>
 
 </body>
 </html>
