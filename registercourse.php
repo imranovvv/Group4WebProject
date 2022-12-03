@@ -1,7 +1,3 @@
-<html>
-<head>
-<title>Untitled Document</title> </head>
-<body>
 <?php
 	session_start();
 
@@ -17,5 +13,3 @@
 		echo 'Error occurred';
 	}
 ?>
-</body>
-</html>
