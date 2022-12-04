@@ -6,22 +6,26 @@
 	<title>User main page</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-	<link rel="stylesheet" href="style.css">
+	
 	<!--CSS File-->
 </head>
 <body>
 <?php
 	session_start();
 
-	
-
 	if ($_SESSION['usertype']=="user") 
 	{
 		$con=mysqli_connect("localhost","root","","login_db") or die("Cannot connect to server");
 		$query="SELECT * from course ";
 		$result=mysqli_query($con,$query);
+?>
+	<a href="logout.php">Logout</a>
+	<a href="settings.php">Settings</a>
+<?php 
 		while($row=mysqli_fetch_array($result)):
 ?>
+
+
 
 <div class="card" style="width: 18rem;">
   <div class="card-body">

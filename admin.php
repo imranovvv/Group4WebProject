@@ -16,9 +16,12 @@
 	if ($_SESSION['usertype']=="admin") 
 	{
 ?>
+
+	<a href="logout.php">Logout</a>
+
 		<table border=1 align=center class="table table-bordered">
 			<tr>
-				<th colspan="6">LIST OF COURSES</th>
+				<th colspan="8">LIST OF COURSES</th>
 			</tr>
 			<tr>
 				<th>Course ID</th>
@@ -27,23 +30,40 @@
 				<th>Date</th>
 				<th>Duration</th>
 				<th>Price</th>
+				<th>Quota</th>
+				<th>Set Quota</th>
 			</tr>
 <?php
 	$con=mysqli_connect("localhost","root","","login_db") or die("Cannot connect to server");
 	$query="SELECT * from course";
 	$result=mysqli_query($con,$query);
+	$edit="edit.php";
 	while($row=mysqli_fetch_array($result))
 	{
 		?>
 		<tr>
-<?php
-		echo "<td>$row[0]</td>";
-		echo "<td>$row[1]</td>";
-		echo "<td>$row[2]</td>";
-		echo "<td>$row[3]</td>";
-		echo "<td>$row[4]</td>";
-		echo "<td>$row[5]</td>";
+		<td><?php echo $row["0"]; ?></td>
+		<td><?php echo $row["1"]; ?></td>
+		<td><?php echo $row["2"]; ?></td>
+		<td><?php echo $row["3"]; ?></td>
+		<td><?php echo $row["4"]; ?></td>
+		<td><?php echo $row["5"]; ?></td>
+		<td><?php echo $row["6"]; ?></td>
+		<td>
+  			<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#edit" aria-expanded="false" aria-controls="edit">Edit</button>
+  			<div class="collapse" id="edit">
+ 		 <div class="card card-body">
+   			<form action="addcourse.php" method="post" >
 
+		<div class="form-group">
+			<label class="form-label" for="quota">Quota</label>
+			<input class="form-control" type="text" name="quota" required>
+		</div>
+		</td>
+		
+		<!-- Course name -->
+
+<?php
 	}
 
 ?>
@@ -90,19 +110,85 @@
 			<input class="form-control " type="text" name="price" required>
 		</div>
 
+		<label class="form-label" for="quota">Quota</label>
+		<div class="input-group">
+			<input class="form-control " type="text" name="quota" required>
+		</div>
+		<!-- Duration -->
+
 		<input style="margin-top: 15px;" class="btn btn-success w-100" type="submit" value="Add"></input>
 		<!--Submit course-->
 
 		</form>
   </div>
 </div>
-	
+
+	<table border=1 align=center class="table table-bordered">
+		<tr>
+			<th colspan="5">USER INFORMATION</th>
+		</tr>
+		<tr>
+			<th>Username</th>
+			<th>Password</th>
+			<th>User Type</th>
+			<th>Name</th>
+			<th>Email</th>
+		</tr>
+		<?php
+	$con=mysqli_connect("localhost","root","","login_db") or die("Cannot connect to server");
+	$query="SELECT * from login";
+	$result=mysqli_query($con,$query);
+	while($row=mysqli_fetch_array($result))
+	{
+		?>
+		<tr>
+<?php
+		echo "<td>$row[0]</td>";
+		echo "<td>$row[1]</td>";
+		echo "<td>$row[2]</td>";
+		echo "<td>$row[3]</td>";
+		echo "<td>$row[4]</td>";
+
+	}
+
+?>
+	</table>
+
+	<table border=1 align=center class="table table-bordered">
+		<tr>
+			<th colspan="5">REGISTERED USERS</th>
+		</tr>
+		<tr>
+			<th>Username</th>
+			<th>Course ID</th>
+			<th>Course Name</th>
+			<th>Name</th>
+			<th>Email</th>
+		</tr>
+		<?php
+	$con=mysqli_connect("localhost","root","","login_db") or die("Cannot connect to server");
+	$query="SELECT * from login";
+	$result=mysqli_query($con,$query);
+	while($row=mysqli_fetch_array($result))
+	{
+		?>
+		<tr>
+<?php
+		echo "<td>$row[0]</td>";
+		echo "<td>$row[1]</td>";
+		echo "<td>$row[2]</td>";
+		echo "<td>$row[3]</td>";
+		echo "<td>$row[4]</td>";
+
+	}
+
+?>
+	</table>
 <?php
 	}
 	else
 	{
 		echo "No session exist or session is expired. Please log in again";
-		header("Location: index.html");
 		
 	}
 

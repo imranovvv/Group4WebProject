@@ -8,8 +8,9 @@
 	$date=@$_POST['date'];
 	$duration=@$_POST['duration'];
 	$price=@$_POST['price'];
+	$quota=@$_POST['quota'];
 
-	$sql="INSERT INTO course VALUES(null,'$coursename','$description','$date','$duration','$price')";
+	$sql="INSERT INTO course VALUES(null,'$coursename','$description','$date','$duration','$price','$quota')";
 	$result=mysqli_query($con,$sql);
 	if($result){
 		echo 'Successfully saved';

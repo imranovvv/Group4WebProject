@@ -8,7 +8,11 @@
 	$result=mysqli_query($con,$sql);
 	$row=mysqli_fetch_array($result);
 	if(mysqli_num_rows($result)== 0)
+	{
 		echo "Username does not exist";
+		header("location:login.html");
+	}
+
 	else
 	{
 		if($row["password"]==$password)
@@ -17,6 +21,7 @@
 			{
 				session_start();
 				$_SESSION["usertype"]=$row["usertype"];
+				$_SESSION["userid"]=$row["username"];
 				header("location:admin.php");
 			}
 			else
