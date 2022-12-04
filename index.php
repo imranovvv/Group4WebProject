@@ -15,8 +15,8 @@
 
 	<a href="login.html">Login</a>
 	<a href="categories.php">Categories</a>
+	<a href="FAQ.html">FAQ</a>
 	<a href="contactUs.html">Contact Us</a>
-
 
 </body>
 

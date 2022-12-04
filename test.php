@@ -1,33 +1,71 @@
-<html>
-<body>
 <?php
- echo "<table border='1'><tr>
-        <td>Customer ID</td>
-        <td>Customer Name</td>
-        <td>Customer Address</td>
-        </tr>";
-        $con=mysqli_connect("localhost", "root", "","login_db") or die("Cannot connect to server.".mysqli_error($con));
-       
-        $username=@$_POST["username"];
-        $name=@$_POST["name"];
-        $email=@$_POST["email"];
 
-        $sql="SELECT * FROM login WHERE username LIKE '%$username%' AND name LIKE '%$name%' AND email LIKE '%$email%' ";
+if(isset($_POST['search']))
+{
+    $valueToSearch = $_POST['valueToSearch'];
+    // search in all table columns
+    // using concat mysql function
+    $query = "SELECT * FROM course WHERE CONCAT(`courseid`, `coursename`, `description`, `date`,`duration`,`price`,`quota`) LIKE '%".$valueToSearch."%'";
+    $search_result = filterTable($query);
+    
+}
+ else {
+    $query = "SELECT * FROM course";
+    $search_result = filterTable($query);
+}
 
- $result=mysqli_query($con,$sql) or die("Cannot execute sql.");
- while($row=mysqli_fetch_array($result))
- {
- $username=$row[0];
- $name=$row[3];
- $email=$row[4];
+// function to connect and execute the query
+function filterTable($query)
+{
+    $connect = mysqli_connect("localhost", "root", "", "login_db");
+    $filter_Result = mysqli_query($connect, $query);
+    return $filter_Result;
+}
 
- echo "<tr>
-        <td>$username</td>
-        <td>$name</td>
-        <td>$email</td>
-        </tr>";
- }
- echo "</table>";
 ?>
-</body>
-</html> 
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PHP HTML TABLE DATA SEARCH</title>
+        <style>
+            table,tr,th,td
+            {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <form action="test.php" method="post">
+            <input type="text" name="valueToSearch" placeholder=""><br><br>
+            <input type="submit" name="search" value="Search"><br><br>
+            
+            <table>
+                <tr>
+                    <th>Course ID</th>
+                    <th>Course</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Duration</th>
+                    <th>Price</th>
+                    <th>Quota</th>
+                </tr>
+
+      <!-- populate table from mysql database -->
+                <?php while($row = mysqli_fetch_array($search_result)):?>
+                <tr>
+                    <td><?php echo $row['0'];?></td>
+                    <td><?php echo $row['1'];?></td>
+                    <td><?php echo $row['2'];?></td>
+                    <td><?php echo $row['3'];?></td>
+                    <td><?php echo $row['4'];?></td>
+                    <td><?php echo $row['5'];?></td>
+                    <td><?php echo $row['6'];?></td>
+                </tr>
+                <?php endwhile;?>
+            </table>
+        </form>
+        
+    </body>
+</html>
