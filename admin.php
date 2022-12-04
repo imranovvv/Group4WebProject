@@ -37,7 +37,6 @@
 	$con=mysqli_connect("localhost","root","","login_db") or die("Cannot connect to server");
 	$query="SELECT * from course";
 	$result=mysqli_query($con,$query);
-	$edit="edit.php";
 	while($row=mysqli_fetch_array($result))
 	{
 		?>
@@ -50,18 +49,14 @@
 		<td><?php echo $row["5"]; ?></td>
 		<td><?php echo $row["6"]; ?></td>
 		<td>
-  			<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#edit" aria-expanded="false" aria-controls="edit">Edit</button>
-  			<div class="collapse" id="edit">
- 		 <div class="card card-body">
-   			<form action="addcourse.php" method="post" >
-
-		<div class="form-group">
-			<label class="form-label" for="quota">Quota</label>
-			<input class="form-control" type="text" name="quota" required>
-		</div>
+		<form action="editquota.php?id=<?php echo $row[0]?>" method="post" >
+			<div class="form-group">
+				<input class="form-control" type="text" name="quota" required>
+			</div>
+			<input style="margin-top: 15px;" class="btn btn-success w-100" type="submit" value="Edit"></input>
+		</form>
 		</td>
 		
-		<!-- Course name -->
 
 <?php
 	}
@@ -77,7 +72,7 @@
 </p>
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
-   <form action="addcourse.php" method="post" >
+   <form action="admin/addcourse.php" method="post" >
 
 		<div class="form-group">
 			<label class="form-label" for="coursename">Course Name</label>
@@ -135,7 +130,6 @@
 			<th>Email</th>
 		</tr>
 		<?php
-	$con=mysqli_connect("localhost","root","","login_db") or die("Cannot connect to server");
 	$query="SELECT * from login";
 	$result=mysqli_query($con,$query);
 	while($row=mysqli_fetch_array($result))
@@ -166,7 +160,6 @@
 			<th>Email</th>
 		</tr>
 		<?php
-	$con=mysqli_connect("localhost","root","","login_db") or die("Cannot connect to server");
 	$query="SELECT * from login";
 	$result=mysqli_query($con,$query);
 	while($row=mysqli_fetch_array($result))
