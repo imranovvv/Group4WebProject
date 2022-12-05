@@ -1,14 +1,16 @@
 <?php
+    session_start();
+    $con=mysqli_connect("localhost", "root", "","login_db") or die("Cannot connect to server");
 
 if(isset($_POST['search']))
 {
-    $con = mysqli_connect("localhost", "root", "", "login_db");
     $valueToSearch = $_POST['valueToSearch'];
     $query = "SELECT C.*, L.* FROM login L JOIN registercourse R ON L.username=R.username JOIN course C ON C.courseid=R.courseid WHERE CONCAT(R.username,name,email,coursename,R.courseid,C.date,duration,price) LIKE '%".$valueToSearch."%'";
-    $result = mysqli_query($con, $query);    
+    $search_result = mysqli_query($con,$query);
 }
  else {
-
+        $query = "SELECT C.*, L.* FROM login L JOIN registercourse R ON L.username=R.username JOIN course C ON C.courseid=R.courseid";
+    $search_result = mysqli_query($con,$query);
 }
 
 
@@ -41,7 +43,7 @@ if(isset($_POST['search']))
                 </tr>
 
       <!-- populate table from mysql database -->
-                <?php while($row = mysqli_fetch_array($result)):?>
+                <?php while($row = mysqli_fetch_array($search_result)):?>
                 <tr>
                     <td><?php echo $row['username'];?></td>
                     <td><?php echo $row['name'];?></td>

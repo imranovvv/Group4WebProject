@@ -45,8 +45,8 @@
 		<td><?php echo $row["1"]; ?></td>
 		<td><?php echo $row["2"]; ?></td>
 		<td><?php echo $row["3"]; ?></td>
-		<td><?php echo $row["4"]; ?></td>
-		<td><?php echo $row["5"]; ?></td>
+		<td><?php echo $row["4"]; ?> hours</td>
+		<td>RM<?php echo $row["5"]; ?></td>
 		<td><?php echo $row["6"]; ?></td>
 		<td>
 		<form action="editquota.php?id=<?php echo $row[0]?>" method="post" >
@@ -146,8 +146,59 @@
 	</table>
 
 
-<a href="test.php">USER REGISTRATION</a>
+<?php
 
+if(isset($_POST['search']))
+{
+    $valueToSearch = $_POST['valueToSearch'];
+    $query = "SELECT C.*, L.* FROM login L JOIN registercourse R ON L.username=R.username JOIN course C ON C.courseid=R.courseid WHERE CONCAT(R.username,name,email,coursename,R.courseid,C.date,duration,price) LIKE '%".$valueToSearch."%'";
+    $search_result = mysqli_query($con,$query);
+}
+ else {
+        $query = "SELECT C.*, L.* FROM login L JOIN registercourse R ON L.username=R.username JOIN course C ON C.courseid=R.courseid";
+    $search_result = mysqli_query($con,$query);
+}
+
+
+
+?>
+
+
+        <form action="" method="post">
+            <input type="text" name="valueToSearch" placeholder=""><br><br>
+            <input type="submit" name="search" value="Search"><br><br>
+            
+            <table border=1 align=center class="table table-bordered">
+            	<tr>
+            		<th colspan="8">USER REGISTRATION DETAILS</th>
+            	</tr>
+                <tr>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Course Name</th>
+                    <th>Course ID</th>
+                    <th>Date</th>
+                    <th>Duration</th>
+                    <th>Price</th>
+                </tr>
+
+      <!-- populate table from mysql database -->
+                <?php while($row = mysqli_fetch_array($search_result)):?>
+                <tr>
+                    <td><?php echo $row['username'];?></td>
+                    <td><?php echo $row['name'];?></td>
+                    <td><?php echo $row['email'];?></td>
+                    <td><?php echo $row['coursename'];?></td>
+                    <td><?php echo $row['courseid'];?></td>
+                    <td><?php echo $row['date'];?></td>
+                    <td><?php echo $row['duration'];?> hours</td>
+                    <td>RM<?php echo $row['price'];?></td>
+
+                </tr>
+                <?php endwhile;?>
+            </table>
+        </form>
 <?php
 }
 	
