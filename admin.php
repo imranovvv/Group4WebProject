@@ -72,7 +72,7 @@
 </p>
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
-   <form action="admin/addcourse.php" method="post" >
+   <form action="addcourse.php" method="post" >
 
 		<div class="form-group">
 			<label class="form-label" for="coursename">Course Name</label>
@@ -132,53 +132,25 @@
 		<?php
 	$query="SELECT * from login";
 	$result=mysqli_query($con,$query);
-	while($row=mysqli_fetch_array($result))
-	{
+	while($row=mysqli_fetch_array($result)):
 		?>
 		<tr>
-<?php
-		echo "<td>$row[0]</td>";
-		echo "<td>$row[1]</td>";
-		echo "<td>$row[2]</td>";
-		echo "<td>$row[3]</td>";
-		echo "<td>$row[4]</td>";
+			<td><?php echo $row["0"]; ?></td>
+			<td><?php echo $row["1"]; ?></td>
+			<td><?php echo $row["2"]; ?></td>
+			<td><?php echo $row["3"]; ?></td>
+			<td><?php echo $row["4"]; ?></td>
+		</tr>
+    <?php endwhile;?>
 
-	}
-
-?>
 	</table>
 
-	<table border=1 align=center class="table table-bordered">
-		<tr>
-			<th colspan="5">REGISTERED USERS</th>
-		</tr>
-		<tr>
-			<th>Username</th>
-			<th>Course ID</th>
-			<th>Course Name</th>
-			<th>Name</th>
-			<th>Email</th>
-		</tr>
-		<?php
-	$query="SELECT * from login";
-	$result=mysqli_query($con,$query);
-	while($row=mysqli_fetch_array($result))
-	{
-		?>
-		<tr>
-<?php
-		echo "<td>$row[0]</td>";
-		echo "<td>$row[1]</td>";
-		echo "<td>$row[2]</td>";
-		echo "<td>$row[3]</td>";
-		echo "<td>$row[4]</td>";
 
-	}
+<a href="test.php">USER REGISTRATION</a>
 
-?>
-	</table>
 <?php
-	}
+}
+	
 	else
 	{
 		echo "No session exist or session is expired. Please log in again";

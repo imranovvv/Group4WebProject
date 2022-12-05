@@ -21,6 +21,7 @@
 ?>
 	<a href="logout.php">Logout</a>
 	<a href="settings.html">Settings</a>
+
 <?php 
 		while($row=mysqli_fetch_array($result)):
 ?>
@@ -40,8 +41,8 @@
 
 <?php
 endwhile;
-	}
-	
+}
+
 	else
 	{
 		echo "No session exist or session is expired. Please log in again";

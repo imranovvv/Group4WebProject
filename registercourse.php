@@ -7,6 +7,7 @@
 	$result=mysqli_query($con,$sql);
 	if($result){
 		echo 'Successfully saved';
+		header("Location:user.php");
 	}
 	else
 	{
