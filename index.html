@@ -257,12 +257,50 @@
 
     <!-- ======= Call To Action Section ======= -->
     <section id="call-to-action" class="call-to-action">
-      <div class="container text-center" data-aos="zoom-out">
-        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
-        <h3>Call To Action</h3>
-        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <a class="cta-btn" href="#">Call To Action</a>
-      </div>
+      <div class="login">
+		<h1 class="text-center">Register</h1>
+
+		<form action="register.php" method="post" >
+
+		<div class="form-group">
+			<label class="form-label" for="name">Name</label>
+			<input class="form-control" type="text" name="name"  required>
+		</div>
+		<!-- Name -->
+
+		<div class="form-group">
+			<label class="form-label" for="email">Email Address</label>
+			<input class="form-control" type="email" name="email" required>
+		</div>
+		<!-- Email Address -->
+
+		<div class="form-group">
+			<label class="form-label" for="username">Username</label>
+			<input class="form-control" type="text" name="username"  required>
+		</div>
+		<!-- Username -->
+
+		<div class="form-group">
+			<label class="form-label" for="password">Password</label>
+			<input class="form-control" type="password" name="password" required>
+		<div>
+		<!-- Password -->
+
+		<div class="form-group">
+			<label class="form-label" for="password">Confirm Password</label>
+			<input class="form-control" type="password" name="password2" required>
+
+		<div>
+		<!-- Confirm Password -->
+		
+		<input class="btn btn-success w-100" type="submit" value="Register"></input>
+		<!--Submit register form-->
+		
+		<a href="index.php">Already have an account?</a>
+		<!--Send to registration-->
+
+		</form>
+	</div>
     </section><!-- End Call To Action Section -->
 
     <!-- ======= Our Services Section ======= -->
