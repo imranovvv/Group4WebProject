@@ -181,6 +181,7 @@ if(isset($_POST['search']))
                     <th>Date</th>
                     <th>Duration</th>
                     <th>Price</th>
+					<th>Delete</th>
                 </tr>
 
       <!-- populate table from mysql database -->
@@ -194,6 +195,11 @@ if(isset($_POST['search']))
                     <td><?php echo $row['date'];?></td>
                     <td><?php echo $row['duration'];?> hours</td>
                     <td>RM<?php echo $row['price'];?></td>
+					<td>
+					<a href="delete.php?courseid=<?php echo $row[4]?>username=<?php echo $row[0]?>" method="post">
+						<input style="margin-top: 15px;" class="btn btn-success w-100" type="submit" value="Delete"></input>
+					</a>
+					</td>
 
                 </tr>
                 <?php endwhile;?>
