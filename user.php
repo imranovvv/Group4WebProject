@@ -98,7 +98,9 @@ if(isset($_POST['search']))
 
 	else
 	{
-		echo "No session exist or session is expired. Please log in again";
+		$message = "No session exist or session is expired. Please log in again";
+          	echo "<script type='text/javascript'>alert('$message');</script>";
+		
 
 		
 	}
