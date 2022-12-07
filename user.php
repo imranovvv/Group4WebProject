@@ -12,10 +12,11 @@
 <body>
 <?php
 	session_start();
-	$username=$_SESSION['userid'];
 
-	if ($_SESSION['usertype']=="user") 
+	if (isset($_SESSION['usertype'])) 
 	{
+        if($_SESSION['usertype']=="user"){
+        $username=$_SESSION['userid'];
 		$con=mysqli_connect("localhost","root","","login_db") or die("Cannot connect to server");
 		$query="SELECT * from course ";
 		$result=mysqli_query($con,$query);
@@ -93,10 +94,12 @@ if(isset($_POST['search']))
         </form>
 <?php
 }
+}
 
 	else
 	{
 		echo "No session exist or session is expired. Please log in again";
+
 		
 	}
 
