@@ -13,8 +13,10 @@
 <?php
 	session_start();
 	
-	if ($_SESSION['usertype']=="admin") 
+	if (isset($_SESSION['usertype'])) 
 	{
+		if($_SESSION['usertype']=="admin"){
+
 ?>
 
 	<a href="logout.php">Logout</a>
@@ -206,6 +208,7 @@ if(isset($_POST['search']))
             </table>
         </form>
 <?php
+}
 }
 	
 	else

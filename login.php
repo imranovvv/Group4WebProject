@@ -9,7 +9,9 @@
 	$row=mysqli_fetch_array($result);
 	if(mysqli_num_rows($result)== 0)
 	{
-		echo "Username does not exist";
+		$message = "Username does not exist. Try again!";
+          	echo "<script type='text/javascript'>alert('$message');</script>";
+		
 		header("location:login.html");
 	}
 
@@ -22,6 +24,7 @@
 				session_start();
 				$_SESSION["usertype"]=$row["usertype"];
 				$_SESSION["userid"]=$row["username"];
+				
 				header("location:admin.php");
 			}
 			else
@@ -34,7 +37,10 @@
 			}	
 		}
 
-		else echo "Password wrong";
+		else 
+			$message = "Wrong password. Try again!";
+              		echo "<script type='text/javascript'>alert('$message');</script>";
+		
 	}
 	
 ?>

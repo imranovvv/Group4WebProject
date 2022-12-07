@@ -1,6 +1,5 @@
 <?php
 	session_start();
-
 	$con=mysqli_connect("localhost", "root", "","login_db") or die("Cannot connect to server");
 	$courseid=@$_GET['id'];
 	
