@@ -10,7 +10,9 @@
 	if(mysqli_num_rows($result)== 0)
 	{
 		$message = "Username does not exist. Try again!";
-          		echo "<script type='text/javascript'>alert('$message');</script>";
+          	echo "<script type='text/javascript'>alert('$message');</script>";
+		
+		header("location:login.html");
 	}
 
 	else
