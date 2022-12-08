@@ -172,7 +172,7 @@ if(isset($_POST['search']))
             
             <table border=1 align=center class="table table-bordered">
             	<tr>
-            		<th colspan="8">USER REGISTRATION DETAILS</th>
+            		<th colspan="9">USER REGISTRATION DETAILS</th>
             	</tr>
                 <tr>
                     <th>Username</th>
@@ -198,8 +198,7 @@ if(isset($_POST['search']))
                     <td><?php echo $row['duration'];?> hours</td>
                     <td>RM<?php echo $row['price'];?></td>
 					<td>
-					<a href="delete.php?courseid=<?php echo $row[4]?>username=<?php echo $row[0]?>" method="post">
-						<input style="margin-top: 15px;" class="btn btn-success w-100" type="submit" value="Delete"></input>
+					<a href="delete.php?courseid=<?php echo $row['courseid']?>&amp;username=<?php echo $row['username']?>" class="btn btn-success w-100">Delete
 					</a>
 					</td>
 
