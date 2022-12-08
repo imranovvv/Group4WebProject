@@ -19,7 +19,7 @@
 
 	if($result){
 		echo 'Successfully saved';
-		header("location:user.html");
+		header("location:user.php");
 	}
 	else
 	{
