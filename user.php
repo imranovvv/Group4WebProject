@@ -32,10 +32,10 @@
 
 <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title"><?php echo $row[1]?></h5>
-    <p class="card-text"><?php echo $row[2]?></p>
+    <h5 class="card-title"><?php echo $row['coursename']?></h5>
+    <p class="card-text"><?php echo $row['description']?></p>
 
-		<a href="registercourse.php?id=<?php echo $row[0]?>" class="btn btn-primary">Register</a>	
+		<a href="registercourse.php?id=<?php echo $row['courseid']?>" class="btn btn-primary">Register</a>	
 
   </div>
 </div>

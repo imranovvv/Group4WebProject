@@ -43,15 +43,15 @@
 	{
 		?>
 		<tr>
-		<td><?php echo $row["0"]; ?></td>
-		<td><?php echo $row["1"]; ?></td>
-		<td><?php echo $row["2"]; ?></td>
-		<td><?php echo $row["3"]; ?></td>
-		<td><?php echo $row["4"]; ?> hours</td>
-		<td>RM<?php echo $row["5"]; ?></td>
-		<td><?php echo $row["6"]; ?></td>
+		<td><?php echo $row['courseid']; ?></td>
+		<td><?php echo $row['coursename']; ?></td>
+		<td><?php echo $row['description']; ?></td>
+		<td><?php echo $row['date']; ?></td>
+		<td><?php echo $row['duration']; ?> hours</td>
+		<td>RM<?php echo $row['price']; ?></td>
+		<td><?php echo $row['quota']; ?></td>
 		<td>
-		<form action="editquota.php?id=<?php echo $row[0]?>" method="post" >
+		<form action="editquota.php?id=<?php echo $row['courseid']?>" method="post" >
 			<div class="form-group">
 				<input class="form-control" type="text" name="quota" required>
 			</div>
@@ -137,11 +137,11 @@
 	while($row=mysqli_fetch_array($result)):
 		?>
 		<tr>
-			<td><?php echo $row["0"]; ?></td>
-			<td><?php echo $row["1"]; ?></td>
-			<td><?php echo $row["2"]; ?></td>
-			<td><?php echo $row["3"]; ?></td>
-			<td><?php echo $row["4"]; ?></td>
+			<td><?php echo $row['username']; ?></td>
+			<td><?php echo $row['password']; ?></td>
+			<td><?php echo $row['usertype']; ?></td>
+			<td><?php echo $row['name']; ?></td>
+			<td><?php echo $row['email']; ?></td>
 		</tr>
     <?php endwhile;?>
 
