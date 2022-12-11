@@ -2,7 +2,9 @@
 	session_start();
 	$con=mysqli_connect("localhost", "root", "","login_db") or die("Cannot connect to server");
 	$courseid=@$_GET['id'];
-	
+	$message="This course is already full";
+	$message2="Successfully registered!";
+
 	$sql="INSERT INTO registercourse VALUES('{$_SESSION['userid']}','$courseid')";
 
 	$sql_restrict="SELECT quota FROM course WHERE courseid='$courseid'";
@@ -15,14 +17,20 @@
 
 	if($no_of_rows>=$row[0])
 	{
-		echo "This course is already full";
+		    echo "<script type='text/javascript'>alert('$message');</script>";
+
+
 	}
 	else
 	{
 		if($result=mysqli_query($con,$sql))
 		{
-			echo 'Successfully saved';
-			header("location:user.php");
+		    echo "<script type='text/javascript'>
+		    setTimeout(function(){
+		    	window.location.href='user.php';
+		    	},2000);
+		    }
+		    </script>";
 		}
 		else
 		{
