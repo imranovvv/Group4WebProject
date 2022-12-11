@@ -49,7 +49,10 @@
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1>Group4<span>.</span></h1>
       </a>
-
+<nav id="navbar" class="navbar">
+  <ul>
+      <li><a href="logout.php">Logout</a>
+</nav><!-- .navbar -->
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
@@ -65,8 +68,6 @@
         if($_SESSION['usertype']=="admin"){
 
 ?>
-           <p align="right"</p>
-    <a href="logout.php">Logout</a>
             <!-- =======LIST OF COURSES Section ======= -->
                 <section id="about" class="about">
                   <div class="container" data-aos="fade-up">
@@ -202,7 +203,10 @@
             <td><?php echo $row['email']; ?></td>
         </tr>
     <?php endwhile;?>
+
     </table>
+
+
 <?php
 
 if(isset($_POST['search']))
@@ -260,6 +264,7 @@ if(isset($_POST['search']))
                     <a href="delete.php?courseid=<?php echo $row['courseid']?>&amp;username=<?php echo $row['username']?>" class="btn btn-success w-100">Delete
                     </a>
                     </td>
+
                 </tr>
                 <?php endwhile;?>
             </table>
@@ -268,7 +273,7 @@ if(isset($_POST['search']))
 }
 }
     
-    else {
+    else{
         $message = "No session exist or session is expired. Please log in again";
               echo "<script type='text/javascript'>alert('$message');</script>";
     }
@@ -294,4 +299,5 @@ if(isset($_POST['search']))
 
 
 </body>
+
 </html>
