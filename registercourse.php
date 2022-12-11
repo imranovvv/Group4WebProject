@@ -36,7 +36,7 @@
 		{
 		    $message = "Successfully saved";
                   	echo "<script type='text/javascript'>alert('$message');</script>";
-                  	echo "<script>setTimeout(function () { window.location.href = 'user.php'; }, 1000);</script>";
+                  	echo "<script>setTimeout(function () { window.location.href = 'user.php#about'; }, 1000);</script>";
 
 		}
 		else

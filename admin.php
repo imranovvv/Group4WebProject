@@ -44,7 +44,7 @@
   <header id="header" class="header d-flex align-items-center">
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="admin.php" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1>Group4<span>.</span></h1>
@@ -71,7 +71,7 @@
             <!-- =======LIST OF COURSES Section ======= -->
                 <section id="about" class="about">
                   <div class="container" data-aos="fade-up">
-        <table border=1 align=center class="table table-bordered">
+        <table border=1 align=center class="table table-bordered table-dark table-striped table-hover">
             <tr>
                 <th colspan="8">LIST OF COURSES</th>
             </tr>
@@ -109,7 +109,7 @@
             <div class="form-group">
                 <input class="form-control" type="text" name="quota" required>
             </div>
-            <input style="margin-top: 15px;" class="btn btn-success w-100" type="submit" value="Edit"></input>
+            <input style="margin-top: 15px;" class="btn btn-outline-success w-100" type="submit" value="Edit"></input>
         </form>
         </td>
         
@@ -123,7 +123,7 @@
     </table>
 
 <p align="center">
-  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     Add course
   </button>
 </p>
@@ -168,7 +168,7 @@
         </div>
         <!-- Duration -->
 
-        <input style="margin-top: 15px;" class="btn btn-success w-100" type="submit" value="Add"></input>
+        <input style="margin-top: 15px;" class="btn btn-dark w-100" type="submit" value="Add"></input>
         <!--Submit course-->
 
         </form>
@@ -178,7 +178,7 @@
             <!-- ======= USER INFORMATION Section ======= -->
             <section id="stats-counter" class="stats-counter">
               <div class="container" data-aos="fade-up">
-    <table border=1 align=center class="table table-bordered">
+    <table border=1 align=center class="table table-bordered table-dark table-striped table-hover">
         <tr>
             <th colspan="5">USER INFORMATION</th>
         </tr>
@@ -229,7 +229,7 @@ if(isset($_POST['search']))
             <!-- ======= USER REGISTRATION DETAILS Section ======= -->
               <section id="stats-counter2" class="stats-counter">
                 <div class="container" data-aos="fade-up">
-            <table border=1 align=center class="table table-bordered">
+            <table border=1 align=center class="table table-bordered table-dark table-striped table-hover">
                 <tr>
                     <th colspan="9">USER REGISTRATION DETAILS</th>
                 </tr>
@@ -248,7 +248,7 @@ if(isset($_POST['search']))
             
             <form action="#stats-counter2" method="post">
                 <h2>USER REGISTRATION DETAILS</h2>
-                <input type="submit" name="search" value="Search">
+                <input class="btn btn-secondary" type="submit" name="search" value="Search">
                 <input type="text" name="valueToSearch" placeholder="">
 
       <!-- populate table from mysql database -->
@@ -263,7 +263,7 @@ if(isset($_POST['search']))
                     <td><?php echo $row['duration'];?> hours</td>
                     <td>RM<?php echo $row['price'];?></td>
                     <td>
-                    <a href="delete.php?courseid=<?php echo $row['courseid']?>&amp;username=<?php echo $row['username']?>" class="btn btn-success w-100">Delete
+                    <a href="delete.php?courseid=<?php echo $row['courseid']?>&amp;username=<?php echo $row['username']?>" class="btn btn-outline-danger w-100">Delete
                     </a>
                     </td>
 
