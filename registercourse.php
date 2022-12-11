@@ -17,24 +17,21 @@
 
 	if($no_of_rows>=$row[0])
 	{
-		    echo "<script type='text/javascript'>alert('$message');</script>";
-
-
+		   $message = "This course is already full";
+                  	echo "<script type='text/javascript'>alert('$message');</script>";
 	}
 	else
 	{
 		if($result=mysqli_query($con,$sql))
 		{
-		    echo "<script type='text/javascript'>
-		    setTimeout(function(){
-		    	window.location.href='user.php';
-		    	},2000);
-		    }
-		    </script>";
+		    $message = "Successfully saved";
+                  	echo "<script type='text/javascript'>alert('$message');</script>";
+			header("location:user.php");
 		}
 		else
 		{
-				echo 'Error occurred';
+			$message = "Error occurred";
+                  		echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 	}
 		
