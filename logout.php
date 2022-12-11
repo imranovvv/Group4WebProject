@@ -8,7 +8,10 @@
 		echo "<script>setTimeout(function () { window.location.href = 'index.html'; }, 1000);</script>";
 	}
 	else
+	{
 		$message = "No session exists or session is expired. Please log in again";
         echo "<script type='text/javascript'>alert('$message');</script>";
 		echo "<script>setTimeout(function () { window.location.href = 'index.html'; }, 1000);</script>";
+	}
+		
 ?>
