@@ -25,7 +25,7 @@
 				$_SESSION["usertype"]=$row["usertype"];
 				$_SESSION["userid"]=$row["username"];
 				
-				header("location:admin.php");
+				header("location:adminImpact.php");
 			}
 			else
 			{
