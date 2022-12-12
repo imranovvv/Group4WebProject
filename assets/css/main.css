@@ -20,7 +20,7 @@
 :root {
   --color-default: #222222;
   --color-primary: #62158f;
-  --color-secondary: #b516ba;
+  --color-secondary: #b5a7d4;
 }
 
 /* Smooth scroll behavior */
@@ -42,7 +42,7 @@ a {
 }
 
 a:hover {
-  color: #00b6a1;
+  color: #b5a7d4;
   text-decoration: none;
 }
 
@@ -64,7 +64,7 @@ section {
 }
 
 .sections-bg {
-  background-color: #f6f6f6;
+  background-color: #f6f6f6;	/* white */
 }
 
 .section-header {
@@ -248,7 +248,7 @@ section {
 # Header
 --------------------------------------------------------------*/
 .topbar {
-  background: #00796b;
+  background: #b516ba;;
   height: 40px;
   font-size: 14px;
   transition: all 0.5s;
@@ -1030,7 +1030,7 @@ section {
 }
 
 .services .service-item:hover .icon:before {
-  background: #00b6a1;
+  background: #b516ba;
 }
 
 .services .service-item:hover h3 {
