@@ -66,14 +66,16 @@
         $username=$_SESSION['userid'];
     $con=mysqli_connect("localhost","root","","login_db") or die("Cannot connect to server");
     $query="SELECT * from course ";
+    $query2="SELECT name, email from login WHERE username='$username'";
     $result=mysqli_query($con,$query);
+    $result2=mysqli_query($con,$query2);
+    $row=mysqli_fetch_array($result2);
     ?>
     <section id="hero" class="hero">
     <div class="container position-relative">
         <div class="row gy-5" data-aos="fade-in">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
-            <h2>Courses</h2>
-            <p>Choose from the following courses in topics that may interest you.</p>
+            <h2>Settings</h2>
             <div class="d-flex justify-content-center justify-content-lg-start">
             </div>
         </div>
@@ -84,7 +86,7 @@
         <div class="container rounded bg-white">
         <div class="row">
             <div class="col-md-4 border-right">
-                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="90"><span class="font-weight-bold">John Doe</span><span class="text-black-50">john_doe12@bbb.com</span><span>United States</span></div>
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle border border-dark mt-5" src="https://cdn.iconscout.com/icon/free/png-256/account-avatar-profile-human-man-user-30448.png" width="90"><span class="font-weight-bold"><?php echo $row['name'];?></span><span class="text-black-50"><?php echo $row['email'];?></span></div>
             </div>
             <div class="col-md-8">
                 <div class="p-3 py-4">
@@ -92,7 +94,7 @@
                         <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>
                             <a href=user.php><h6>Back to home</h6></a>
                         </div>
-                        <h6 class="text-center">Edit Profile</h6>
+                        <h5 class="text-center">Edit Profile</h5>
                     </div>
                     <div class="row mt-2">
                         <div class="col-md-6"><input name="name" type="text" class="form-control" placeholder="Name"></div>
