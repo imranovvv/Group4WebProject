@@ -7,7 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
-  <title>Coding Seminar Event</title>
+  <title>User Webpage</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -38,8 +38,8 @@
   <section id="topbar" class="topbar d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:cseb4123@uniten.edu.my">cseb4123@uniten.edu.my</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+60 33178576</span></i>
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -59,9 +59,9 @@
       <nav id="navbar" class="navbar">
         <ul>
 			<li><a href="logout.php">Logout</a>
+			<li><a href="settings.php">Settings</a>
 			<li><a href="#faq">FAQ</a>
 			<li><a href="#contact">Contact Us</a>
-			<li><a href="settings.php">Settings</a>
         </ul>
       </nav><!-- .navbar -->
 
@@ -217,7 +217,7 @@ if(isset($_POST['search']))
               <h3>Frequently Asked <strong>Questions</strong></h3>
               <p>
                 We get asked a lot of questions, so we thought the easiest thing to do would be to compile them in a quick and easy FAQ.<br><br>
-                Still have questions? Feel free to <a href="mailto:CS01080689@student.uniten.edu.my">contact us</a>
+                Still have questions? Feel free to <a href="mailto:cseb4123@uniten.edu.my">contact us</a>
               </p>
             </div>
           </div>
@@ -310,8 +310,8 @@ if(isset($_POST['search']))
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Contact</h2>
-          <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis dolorem dolore earum</p>
+          <h2>Contact Us</h2>
+          <p>Any questions? We are more than happy to help you!</p>
         </div>
 
         <div class="row gx-lg-0 gy-4">
@@ -384,22 +384,20 @@ if(isset($_POST['search']))
       </div>
     </section><!-- End Contact Section -->
 	
-	    <!-- ======= Our Team Section ======= -->
+<!-- ======= Our Team Section ======= -->
     <section id="team" class="team">
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
           <h2>Our Team</h2>
-          <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis dolorem dolore earum</p>
         </div>
 
         <div class="row gy-4">
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-2 col-md-4 d-flex" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
               <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
               <h4>Imran Hafizuddin</h4>
-              <span>Web Development</span>
               <div class="social">
                 <a href=""><i class="bi bi-twitter"></i></a>
                 <a href=""><i class="bi bi-facebook"></i></a>
@@ -409,11 +407,10 @@ if(isset($_POST['search']))
             </div>
           </div><!-- End Team Member -->
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-xl-2 col-md-4 d-flex" data-aos="fade-up" data-aos-delay="200">
             <div class="member">
               <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-              <h4>Alya Qistina</h4>
-              <span>Marketing</span>
+              <h4>Alya</br>Qistina</h4>
               <div class="social">
                 <a href=""><i class="bi bi-twitter"></i></a>
                 <a href=""><i class="bi bi-facebook"></i></a>
@@ -423,11 +420,10 @@ if(isset($_POST['search']))
             </div>
           </div><!-- End Team Member -->
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-xl-2 col-md-4 d-flex" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
               <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
               <h4>Azym Annannurov</h4>
-              <span>Content</span>
               <div class="social">
                 <a href=""><i class="bi bi-twitter"></i></a>
                 <a href=""><i class="bi bi-facebook"></i></a>
@@ -437,11 +433,10 @@ if(isset($_POST['search']))
             </div>
           </div><!-- End Team Member -->
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-xl-2 col-md-4 d-flex" data-aos="fade-up" data-aos-delay="400">
             <div class="member">
               <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
               <h4>Nur Syazwani</h4>
-              <span>Accountant</span>
               <div class="social">
                 <a href=""><i class="bi bi-twitter"></i></a>
                 <a href=""><i class="bi bi-facebook"></i></a>
@@ -451,11 +446,10 @@ if(isset($_POST['search']))
             </div>
           </div><!-- End Team Member -->
 		  
-		  <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="500">
+		  <div class="col-xl-2 col-md-4 d-flex" data-aos="fade-up" data-aos-delay="500">
             <div class="member">
               <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
               <h4>Katiravan Munusamy</h4>
-              <span>Accountant</span>
               <div class="social">
                 <a href=""><i class="bi bi-twitter"></i></a>
                 <a href=""><i class="bi bi-facebook"></i></a>
@@ -481,47 +475,7 @@ if(isset($_POST['search']))
           <a href="index.html" class="logo d-flex align-items-center">
             <span>Impact</span>
           </a>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-          <div class="social-links d-flex mt-4">
-            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Contact Us</h4>
-          <p>
-            A108 Adam Street <br>
-            New York, NY 535022<br>
-            United States <br><br>
-            <strong>Phone:</strong> +1 5589 55488 55<br>
-            <strong>Email:</strong> info@example.com<br>
-          </p>
-
+      
         </div>
 
       </div>
@@ -558,6 +512,7 @@ if(isset($_POST['search']))
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>

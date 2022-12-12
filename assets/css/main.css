@@ -1888,7 +1888,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: rgba(0, 131, 116, 0.8);
+  background: #b5a7d4;
 }
 
 @-webkit-keyframes animate-loading {
@@ -2724,7 +2724,7 @@ height:90.442vh;
 	display:flex;
 	align-items: center;
 	justify-content: center;
-	background: #C2DFEF;
+	background: #b5a7d4;
 }
 .login{
 	width: 360px;
@@ -2751,5 +2751,5 @@ height:90.442vh;
 	form-size:20px;
 	margin-top: 15px;
 	margin-bottom: 12px;
-	background: #316785;
+	background: #8f84f5;
 }
