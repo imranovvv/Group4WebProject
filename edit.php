@@ -11,8 +11,9 @@
     $result=mysqli_query($con,$sql);
     if($result)
 	{
-		echo "Succesfully update the data.";
-		header("location:user.php");
+		$message = "Succesfully update the data.";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+        echo "<script>setTimeout(function () { window.location.href = 'settings.php'; }, 1000);</script>";
 	}
 	else
 		echo "Error in updating the data";
