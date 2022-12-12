@@ -8,7 +8,9 @@
 	$password2=$_POST['password2'];
 
 	if($password!=$password2){
-		echo "Password is not equal";
+		$message = "Password is not equal";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+		echo "<script>setTimeout(function () { window.location.href = 'register.html'; }, 1000);</script>";
 	}
 	else{
 
@@ -18,8 +20,9 @@
 	$result=$stmtinsert->execute();
 
 	if($result){
-		echo 'Successfully saved';
-		header("location:user.php");
+		$message = "Successfully saved";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+		echo "<script>setTimeout(function () { window.location.href = 'login.html'; }, 1000);</script>";
 	}
 	else
 	{
