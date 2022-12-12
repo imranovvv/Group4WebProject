@@ -262,10 +262,19 @@ if(isset($_POST['search']))
                     <td><?php echo $row['date'];?></td>
                     <td><?php echo $row['duration'];?> hours</td>
                     <td>RM<?php echo $row['price'];?></td>
+<<<<<<< Updated upstream
                     <td>
                     <a href="delete.php?courseid=<?php echo $row['courseid']?>&amp;username=<?php echo $row['username']?>" class="btn btn-outline-danger w-100">Delete
                     </a>
                     </td>
+=======
+					<td>
+					<form action= "delete.php" method= "post">
+						<input type= "hidden" name= "username" value="<?php echo $row['username'] ?>">
+						<input type= "hidden" name= "courseid" value="<?php echo $row['courseid'] ?>">
+						<th> <input style="margin-top: 15px;" class="btn btn-success w-100" type="submit" value="Delete"></input>
+					</td>
+>>>>>>> Stashed changes
 
                 </tr>
                 <?php endwhile;?>
