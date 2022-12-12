@@ -61,8 +61,6 @@
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="user.php" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1>Group4<span>.</span></h1>
       </a>
       <nav id="navbar" class="navbar">
@@ -70,23 +68,7 @@
 			<li><a href="logout.php">Logout</a>
 			<li><a href="#faq">FAQ</a>
 			<li><a href="#contact">Contact Us</a>
-      <li><a href="settings.php">Settings</a>
-			<!--<li class="dropdown"><a href="categories.php"><span>Categories</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href= "categories/paitan.php">Python</a></li>
-              <li><a href= "categories/cplus.php">C++</a></li>
-              <li><a href= "categories/java.php">Java</a></li>
-              <li><a href= "categories/PHP.php">PHP</a></li>
-              <li class="drpdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="categories/paitan.php">Python</a></li>
-                  <li><a href= "categories/cplus.php">C++</a></li>
-                  <li><a href= "categories/java.php">Java</a></li>
-                  <li><a href= "categories/PHP.php">PHP</a></li>
-                </ul>
-              </li> 
-			</ul> 
-			</li> -->
+			<li><a href="settings.php">Settings</a>
         </ul>
       </nav><!-- .navbar -->
 

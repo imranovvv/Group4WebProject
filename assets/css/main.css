@@ -20,7 +20,8 @@
 :root {
   --color-default: #222222;
   --color-primary: #62158f;
-  --color-secondary: #b5a7d4;
+  --color-secondary: #8f84f5
+;
 }
 
 /* Smooth scroll behavior */
@@ -42,7 +43,8 @@ a {
 }
 
 a:hover {
-  color: #b5a7d4;
+  color: #8f84f5
+;
   text-decoration: none;
 }
 
@@ -248,7 +250,7 @@ section {
 # Header
 --------------------------------------------------------------*/
 .topbar {
-  background: #b516ba;;
+  background: #b5a7d4;
   height: 40px;
   font-size: 14px;
   transition: all 0.5s;
@@ -328,7 +330,8 @@ section {
 }
 
 .header .logo h1 span {
-  color: #f96f59;
+  color: #8f84f5;
+;
 }
 
 .sticked-header-offset {
@@ -1754,7 +1757,7 @@ section {
 
 .contact .info-item {
   width: 100%;
-  background-color: #009282;
+  background-color: #8f84f5;
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 10px;
@@ -1814,7 +1817,7 @@ section {
 .contact .php-email-form .error-message {
   display: none;
   color: #fff;
-  background: #df1529;
+  background: #8f84f5;
   text-align: left;
   padding: 15px;
   font-weight: 600;
@@ -1827,7 +1830,7 @@ section {
 .contact .php-email-form .sent-message {
   display: none;
   color: #fff;
-  background: #059652;
+  background: #8f84f5;
   text-align: center;
   padding: 15px;
   font-weight: 600;
@@ -1847,7 +1850,7 @@ section {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid #059652;
+  border: 3px solid #8f84f5;
   border-top-color: #fff;
   -webkit-animation: animate-loading 1s linear infinite;
   animation: animate-loading 1s linear infinite;
@@ -2008,7 +2011,8 @@ section {
   padding: 60px 30px;
   position: relative;
   overflow: hidden;
-  background: #008d7d;
+  background: #8f84f5;
+;
   box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
@@ -2040,7 +2044,7 @@ section {
 }
 
 .hero .icon-box:hover {
-  background: #009786;
+  background: #b5a7d4;
 }
 
 .hero .icon-box:hover .title a,
