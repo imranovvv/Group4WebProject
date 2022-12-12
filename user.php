@@ -70,7 +70,7 @@
 			<li><a href="logout.php">Logout</a>
 			<li><a href="#faq">FAQ</a>
 			<li><a href="#contact">Contact Us</a>
-      <li><a href="settings.html">Settings</a>
+      <li><a href="settings.php">Settings</a>
 			<!--<li class="dropdown"><a href="categories.php"><span>Categories</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href= "categories/paitan.php">Python</a></li>
