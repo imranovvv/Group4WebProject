@@ -60,7 +60,7 @@
   <header id="header" class="header d-flex align-items-center">
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="user.php" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1>Group4<span>.</span></h1>
@@ -139,7 +139,7 @@
 
             
           <?php endwhile; 
-          }}?>
+          ?>
                       </div>
     </div>
     
@@ -160,42 +160,73 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Event Details</h2>
+          <h2>Your Registered Courses</h2>
           <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
         </div>
 
-        <div class="row gy-4">
-          <div class="col-lg-6">
-            <h3>Voluptatem dignissimos provident quasi corporis</h3>
-            <img src="assets/img/about.jpg" class="img-fluid rounded-4 mb-4" alt="">
-            <p>Ut fugiat ut sunt quia veniam. Voluptate perferendis perspiciatis quod nisi et. Placeat debitis quia recusandae odit et consequatur voluptatem. Dignissimos pariatur consectetur fugiat voluptas ea.</p>
-            <p>Temporibus nihil enim deserunt sed ea. Provident sit expedita aut cupiditate nihil vitae quo officia vel. Blanditiis eligendi possimus et in cum. Quidem eos ut sint rem veniam qui. Ut ut repellendus nobis tempore doloribus debitis explicabo similique sit. Accusantium sed ut omnis beatae neque deleniti repellendus.</p>
-          </div>
-          <div class="col-lg-6">
-            <div class="content ps-0 ps-lg-5">
-              <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-              </p>
-              <ul>
-                <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="bi bi-check-circle-fill"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-              </ul>
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-              </p>
+        <?php
 
-              <div class="position-relative mt-4">
-                <img src="assets/img/about-2.jpg" class="img-fluid rounded-4" alt="">
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
-              </div>
-            </div>
-          </div>
-        </div>
+if(isset($_POST['search']))
+{
+    $valueToSearch = $_POST['valueToSearch'];
+    $query = "SELECT C.*, L.* FROM login L JOIN registercourse R ON L.username=R.username JOIN course C ON C.courseid=R.courseid WHERE R.username='$username'AND CONCAT(R.username,name,email,coursename,R.courseid,C.date,duration,price) LIKE '%".$valueToSearch."%'";
+    $search_result = mysqli_query($con,$query);
+}
+ else {
+        $query = "SELECT C.*, L.* FROM login L JOIN registercourse R ON L.username=R.username JOIN course C ON C.courseid=R.courseid WHERE R.username='$username'";
+    $search_result = mysqli_query($con,$query);
+}
+
+?>
+
+<form action="" method="post">
+            <input type="text" name="valueToSearch" placeholder=""><br><br>
+            <input class="btn btn-dark" type="submit" name="search" value="Search"><br><br>
+            
+            <table border=1 align=center class="table table-dark table-striped table-hover">
+                <tr>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Course Name</th>
+                    <th>Course ID</th>
+                    <th>Date</th>
+                    <th>Duration</th>
+                    <th>Price</th>
+                </tr>
+
+      <!-- populate table from mysql database -->
+                <?php while($row = mysqli_fetch_array($search_result)):?>
+                <tr>
+                    <td><?php echo $row['username'];?></td>
+                    <td><?php echo $row['name'];?></td>
+                    <td><?php echo $row['email'];?></td>
+                    <td><?php echo $row['coursename'];?></td>
+                    <td><?php echo $row['courseid'];?></td>
+                    <td><?php echo $row['date'];?></td>
+                    <td><?php echo $row['duration'];?> hours</td>
+                    <td>RM<?php echo $row['price'];?></td>
+
+                </tr>
+                <?php endwhile;?>
+            </table>
+        </form>
 
       </div>
+      <?php
+}
+}
+
+  else
+  {
+    $message = "No session exist or session is expired. Please log in again";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+    
+
+    
+  }
+
+?>
     </section><!-- End Event Details Section -->
 
 

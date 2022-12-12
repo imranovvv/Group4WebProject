@@ -12,7 +12,7 @@ $sql_result=mysqli_query($con,$sql_delete);
 if($sql_result)
 {
     echo "Succesfully deleted.";
-    header("location:admin.php");
+    header("location:admin.php#stats-counter2");
 }
 else{
     $message = "Problem occured!";
