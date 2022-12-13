@@ -38,10 +38,11 @@
 			}	
 		}
 
-		else 
+		else {
 			$message = "Wrong password. Try again!";
               		echo "<script type='text/javascript'>alert('$message');</script>";
               		echo "<script>setTimeout(function () { window.location.href = 'login.html'; }, 1000);</script>";
+		}
 
 		
 	}
