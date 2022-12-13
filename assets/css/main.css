@@ -249,24 +249,24 @@ section {
 # Header
 --------------------------------------------------------------*/
 .topbar {
-  background: #b5a7d4;
+  background: #e7d5f7;
   height: 40px;
   font-size: 14px;
   transition: all 0.5s;
-  color: #fff;
+  color: #000000;
   padding: 0;
 }
 
 .topbar .contact-info i {
   font-style: normal;
-  color: #fff;
+  color: #000000;
   line-height: 0;
 }
 
 .topbar .contact-info i a,
 .topbar .contact-info i span {
   padding-left: 5px;
-  color: #fff;
+  color: #000000;
 }
 
 @media (max-width: 575px) {
@@ -283,7 +283,7 @@ section {
 }
 
 .topbar .contact-info i a:hover {
-  color: #fff;
+  color: #000000;
   text-decoration: underline;
 }
 
@@ -295,7 +295,7 @@ section {
 }
 
 .topbar .social-links a:hover {
-  color: #fff;
+  color: #0000000;
 }
 
 .header {
@@ -1888,7 +1888,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #b5a7d4;
+  background: #e7d5f7;
 }
 
 @-webkit-keyframes animate-loading {
@@ -2043,7 +2043,7 @@ section {
 }
 
 .hero .icon-box:hover {
-  background: #b5a7d4;
+  background: #e7d5f7;
 }
 
 .hero .icon-box:hover .title a,
@@ -2720,36 +2720,23 @@ section {
 # Login
 --------------------------------------------------------------*/
 .parent{
-height:90.442vh;
-	display:flex;
-	align-items: center;
-	justify-content: center;
-	background: #b5a7d4;
+height:100vh;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background: #C2DFEF;
 }
 .login{
-	width: 360px;
-	height: min-content;
-	padding: 20px;
-	border-radius: 12px;
-	background: #ffffff;
-}
-
-.login h1{
-	font-size: 36px;
-	margin-bottom: 25px;
-}
-
-.login form{
-	font-size: 20px;
-}
-
-.login form .form-group{
-	margin-bottom: 12px;
+  width: 20em;
+  height: min-content;
+  padding: 1em;
+  border-radius: 1em;
+  background: #ffffff;
 }
 
 .login form input[type="submit"]{
-	form-size:20px;
-	margin-top: 15px;
-	margin-bottom: 12px;
-	background: #8f84f5;
+  
+  background: #316785;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
