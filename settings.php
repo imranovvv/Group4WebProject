@@ -86,7 +86,7 @@
         <div class="container rounded bg-white">
         <div class="row">
             <div class="col-md-4 border-right">
-                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle border border-dark mt-5" src="https://cdn.iconscout.com/icon/free/png-256/account-avatar-profile-human-man-user-30448.png" width="90"><span class="font-weight-bold"><?php echo $row['name'];?></span><span class="text-black-50"><?php echo $row['email'];?></span></div>
+                <div class="d-flex flex-column align-items-center text-center p-3 py-4"><img class="rounded-circle border border-dark mt-5" src="https://cdn.iconscout.com/icon/free/png-256/account-avatar-profile-human-man-user-30448.png" width="90"><span class="font-weight-bold"><?php echo $row['name'];?></span><span class="text-black-50"><?php echo $row['email'];?></span></div>
             </div>
             <div class="col-md-8">
                 <div class="p-3 py-4">
