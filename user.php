@@ -136,7 +136,7 @@
 
         <div class="section-header">
           <h2>Your Registered Courses</h2>
-          <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
+         
         </div>
 
         <?php
@@ -154,7 +154,7 @@ if(isset($_POST['search']))
 
 ?>
 
-<form action="" method="post">
+<form action="#about" method="post">
             <input type="text" name="valueToSearch" placeholder=""><br><br>
             <input class="btn btn-dark" type="submit" name="search" value="Search"><br><br>
             
