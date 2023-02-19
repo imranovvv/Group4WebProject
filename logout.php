@@ -1,6 +1,6 @@
 <?php
 	session_start( );
-	if (isset($_SESSION["userid"])) //userid replace with according to variable $_SESSION[xxx] at login page
+	if (isset($_SESSION["userid"])) //userid replace with according to variable $_SESSION[xxxx] at login page
 	{
 		session_destroy( );
 		$message = "You have successfully logged out.";
